@@ -14,10 +14,9 @@ const callAPI = () => {
             console.error("Error al llamar a la API:", error);
         });
 };
-apiButton.addEventListener("click", callAPI);
 
 function buscar() {
-  const texto = document.getElementById("cajaBusqueda").value.toLowerCase(); // nombre del Pokémon
+  const texto = document.getElementById("cajaBusqueda").value.toLowerCase();
   const resultado = document.getElementById("resultado");
   const imagen = document.getElementById("imagenResultado");
   const base_experience = document.getElementById("base_experience");
@@ -43,6 +42,17 @@ function buscar() {
       base_experience.innerText = "";
     });
 }
+
+// ✅ Evitar error si no existe cajaBusqueda
+const cajaBusqueda = document.getElementById("cajaBusqueda");
+if (cajaBusqueda) {
+    cajaBusqueda.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            buscar();
+        }
+    });
+}
+
 function enviar_formulario(){
     var radio=document.querySelector('input[name=radio]:checked').value;
 
@@ -73,34 +83,37 @@ function obtener_texto2(){
     alert(a)
 }
 
-
-function agregar(){ //sustituye lo que hay dentro del div
+function agregar(){
     document.getElementById("div1").innerHTML = "Hola <input type='text'>";
 }
-function aumentar(){ //aumenta lo que ya hay
+function aumentar(){
     document.getElementById("div1").append("<br> asdf ");   
 }
-function eliminar(){ //eliminar todo el div
-document.getElementById("div1").remove();
+function eliminar(){
+    document.getElementById("div1").remove();
 }
-function vaciar(){ //vaciar el div
-document.getElementById("div1").innerHTML = ""; //Vaciar el div
+function vaciar(){
+    document.getElementById("div1").innerHTML = "";
 }
-function aumentar_con_html(){ //Permite aumentar utilizando innerHTML
+function aumentar_con_html(){
     document.getElementById("div1").innerHTML += "Hola <input type='text'>";
 }
 
+document.querySelector("#asdfg").onclick = () => {
+    const nombre = "Juan";
+    alert("Bienvenido, " + nombre);
+};
 
 document.getElementById("cambiar_fondo").addEventListener("click", function(){
-    document.getElementById("midiv").style.background = " #396f71";
+    document.getElementById("midiv").style.background = "rgb(58, 119, 121)";
 });
 
 document.getElementById("cambiar_color").addEventListener("click", function(){
-    document.getElementById("midiv").style.color = "rgb(126, 251, 255)";
+    document.getElementById("midiv").style.color = "rgb(94, 250, 255)";
 });
 
 document.getElementById("borde").addEventListener("click", function(){
-    document.getElementById("midiv").style.border = "10px solid black"
+    document.getElementById("midiv").style.border = "10px solid black";
 });
 
 document.getElementById("negrita").addEventListener("click", function(){
@@ -111,13 +124,6 @@ document.getElementById("clase").addEventListener("click", function(){
     document.getElementById("midiv").classList.add("miestilo");
 });
 
-//El botón con id "x" agregará el estilo "z" al elemento "y"
 document.getElementById("quitar_clase").addEventListener("click", function(){
     document.getElementById("midiv").classList.remove("miestilo");
 });
-
-
-document.querySelector("#asdfg").onclick =() =>{
-    const nombre = "Juan";
-    alert("Bienvenido, "+ nombre);
-};
