@@ -21,20 +21,18 @@
         <a href="windows.html" class="item_menu">Windows</a>
         <a href="dom.html" class="item_menu">DOM</a>
         <a href="animaciones.html" class="item_menu">Animaciones</a>
-
+        <a href="mariobros.html" class="item_menu">MarioBros</a>
+        <a href="pokeApi.html" class="item_menu">pokeApi</a>
     </div>
 
-    <script>
-        document.getElementById("demo").innerHTML = "location is" + location.href +"<br>";
-        document.getElementById("demo").innerHTML += "hostname is" + location.hostname +"<br>";
-        document.getElementById("demo").innerHTML += "path is" + location.pathname +"<br><br><br>";
-
-        //funciona como si dieras clic en un enlace
-        //location.href = "https://www.google.com";
-
-        //setTimeout("location.href='index.php'",5000);4
-
-    </script>
     
+    <div id="demo"></div>
+
+    <script>
+        document.getElementById("demo").innerHTML = 
+            "location is: " + location.href + "<br>" +
+            "hostname is: " + location.hostname + "<br>" +
+            "path is: " + location.pathname + "<br><br><br>";
+    </script>
 </body>
 </html>
