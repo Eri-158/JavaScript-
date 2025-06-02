@@ -1,54 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en" style="background-color: #4251b1; background-image: url(intro.svg); background-size: 100% 100%; background-attachment: fixed;">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erick</title>
-    <link rel="stylesheet" href="estilos.css">
-    
+<meta charset="UTF-8">
+<title>Mario Bros</title>
+<script src='lib/quintus.js'></script>
+<script src='lib/quintus_sprites.js'></script>
+<script src='lib/quintus_scenes.js'></script>
+<script src='lib/quintus_2d.js'></script>
+<script src='lib/quintus_input.js'></script>
+<script src='lib/quintus_ui.js'></script>
+<script src='lib/quintus_touch.js'></script>
+<script src='lib/quintus_anim.js'></script>
+<script src='lib/quintus_tmx.js'></script>
+<script src='lib/quintus_audio.js'></script>
+
+<style>
+  canvas { background-image: url(images/mainTitle.png); background-size: 100% 100%;}
+</style>
+
+<script src='mario.js'></script>
 </head>
+
 <body>
-  <div id="cabecera">
-        <h1>JavaScript</h1>
-    </div>
-    <div id="menu">
-        <a href="index.html" class="item_menu item_activo">Inicio</a>
-        <a href="eventos.html" class="item_menu">Eventos</a>
-        <a href="css.html" class="item_menu">CSS</a>
-        <a href="form.html" class="item_menu">Form</a>
-        <a href="funciones.html" class="item_menu">Funciones</a>
-        <a href="location.html" class="item_menu">Location</a>
-        <a href="windows.html" class="item_menu ">Windows</a>
-        <a href="dom.html" class="item_menu">DOM</a>
-        <a href="animaciones.html" class="item_menu">Animaciones</a>
-    </div>
-
-    <br>
-    JavaScript es un lenguaje de programación de scripting, interpretado, que se uiliza principalmente
-    para agregar interacciones a sitios web
-
-    <script>
-        var nombre = "Erick";
-        let apellido = "Mera";
-        console.log("El nombr es: "+nombre + " "+ apellido);
-
-        nombre = 913;
-
-        console.log("El nombre es: "+nombre);
-
-        var n1 = 10;
-        var n2 = 7;
-
-        if(n1>n2){
-            console.log("estamos dentro del if");
-            let suma = n1+n2;
-        }
-   
-        for(i=1; i<=10; i++){
-            console.log(i);
-        }
-    </script>
-
-
+  <script type="text/javascript">
+    window.onload = game;
+  </script>
 </body>
 </html>
